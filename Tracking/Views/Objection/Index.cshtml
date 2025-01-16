@@ -1,0 +1,26 @@
+﻿@model List<GetObjectionsByEmployeeId>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Tarih</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Durum</th>
+            <th scope="col">Cevap</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.ObjectionDate.Day / @item.ObjectionDate.Month / @item.ObjectionDate.Year</th>
+                    <td>@item.Description</td>
+                    <td>@item.Status</td>
+                    <td>@item.Response</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

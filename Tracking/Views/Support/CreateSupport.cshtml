@@ -1,0 +1,44 @@
+﻿@model Tracking.ViewModels.CreateSupportViewModel
+
+<form asp-controller="Support" asp-action="CreateSupport" method="post">
+
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form2Example1">Müşterinin adı</label>
+        <input asp-for="CustomerFullName" type="text" class="form-control" />
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Başlangıç Zamanı</label>
+        <input asp-for="StartDate" type="datetime-local" class="form-control" />
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Bitiş Zamanı</label>
+        <input asp-for="EndDate" type="datetime-local" class="form-control" />
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Konu</label>
+        <select asp-for="Subject">
+            <option>Arıza</option>
+            <option>Talep</option>
+            <option>Bilgi</option>
+        </select>
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Durum Bilgisi</label>
+        <select asp-for="Status">
+            <option>Tamamlandı</option>
+            <option>Takip ediliyor</option>
+            <option>Sorun çözülemedi</option>
+        </select>
+    </div>
+
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Detay</label>
+        <textarea asp-for="Note" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Ekle</button>
+</form>

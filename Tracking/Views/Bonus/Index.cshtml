@@ -1,0 +1,34 @@
+﻿@model List<Bonu>
+
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Prim ücreti</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Toplam destek kayıt</th>
+            <th scope="col">Toplam destek süresi</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Price</td>
+                    <td>@item.Date.Value.Month / @item.Date.Value.Year</td>
+                    <td>@item.TotalSupport</td>
+                    <td>@item.TotalTime</td>
+                    @if (item.Date.Value.Month == DateTime.Now.Month && item.Date.Value.Year == DateTime.Now.Year)
+                    {
+                        <td><a href="~/Objection/CreateObjection?bonusId=@item.Id"><button type="button" class="btn btn-danger">İtiraz Et</button></a></td>
+                    }
+                </tr>
+            }
+        }
+    </tbody>
+</table>

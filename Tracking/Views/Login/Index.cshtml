@@ -1,0 +1,56 @@
+﻿@model Tracking.ViewModels.LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Login Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+
+        .login-form {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-form">
+        <form asp-controller="Login" asp-action="Login" method="post">
+
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input asp-for="Email" type="email" class="form-control" value="assistant1@test.com" />
+                <label class="form-label" for="form2Example1">Email</label>
+            </div>
+
+
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input asp-for="Password" type="password" class="form-control" value="123" />
+                <label class="form-label" for="form2Example2">Şifre</label>
+            </div>
+
+            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Giriş yap</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
+</body>
+</html>

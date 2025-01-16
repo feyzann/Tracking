@@ -1,0 +1,11 @@
+﻿@model Tracking.ViewModels.CreateObjectionViewModel
+
+<form asp-controller="Objection" asp-action="CreateObjection" method="post">
+    <input type="hidden" asp-for="BonusId" />
+    <div data-mdb-input-init class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Detay</label>
+        <textarea asp-for="Desc" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger btn-block mb-4">İtiraz Et</button>
+</form>
